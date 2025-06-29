@@ -1,0 +1,26 @@
+specVersion: 1.3.0
+indexerHints:
+  prune: auto
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum
+    name: Voting
+    network: sepolia
+    source:
+      address: "0xc5Ab45C18D4DEfB8315319D16015B75616A771b6"
+      abi: Voting
+      startBlock: 8640528
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.9
+      language: wasm/assemblyscript
+      entities:
+        - Voted
+      abis:
+        - name: Voting
+          file: ./abis/Voting.json
+      eventHandlers:
+        - event: Voted(indexed address,indexed uint256)
+          handler: handleVoted
+      file: ./src/voting.ts
