@@ -8,19 +8,19 @@ dataSources:
     name: Voting
     network: sepolia
     source:
-      address: "0xc5Ab45C18D4DEfB8315319D16015B75616A771b6"
+      address: "0x64144f6603C3aAA8DaEb4Bcd9B422140b0A217f8"
       abi: Voting
-      startBlock: 8640528
+      startBlock: 8655582
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.9
       language: wasm/assemblyscript
       entities:
-        - Voted
+        - votes
       abis:
         - name: Voting
           file: ./abis/Voting.json
       eventHandlers:
-        - event: Voted(indexed address,indexed uint256)
-          handler: handleVoted
+        - event: votes(indexed address,indexed uint256)
+          handler: handlevotes
       file: ./src/voting.ts

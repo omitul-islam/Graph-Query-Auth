@@ -1,8 +1,8 @@
 {
   "sepolia": {
     "Voting": {
-      "address": "0xc5Ab45C18D4DEfB8315319D16015B75616A771b6",
-      "startBlock": 8640528
+      "address": "0x64144f6603C3aAA8DaEb4Bcd9B422140b0A217f8",
+      "startBlock": 8655582
     }
   }
 }

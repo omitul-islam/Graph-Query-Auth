@@ -13,7 +13,7 @@ contract Voting{
     mapping(uint => candidate) public candidates;
     uint public candidateNo;
 
-    event Voted(address indexed voter, uint indexed candidateId);
+    event votes(address indexed voter, uint indexed candidateId);
 
     constructor() {
         addCandidate("Person1");
@@ -28,6 +28,6 @@ contract Voting{
         require(candidates[_candidateId].voteCount > 0 &&  _candidateId <= candidateNo, "Candidate does not exist");
         isVoted[msg.sender] = true;
         candidates[_candidateId].voteCount++; 
-        emit Voted(msg.sender, _candidateId);
+        emit votes(msg.sender, _candidateId);
     }   
 }

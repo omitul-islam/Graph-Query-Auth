@@ -1,8 +1,8 @@
-import { Voted as VotedEvent } from "../generated/Voting/Voting"
-import { Voted } from "../generated/schema"
+import { votes as votesEvent } from "../generated/Voting/Voting"
+import { votes } from "../generated/schema"
 
-export function handleVoted(event: VotedEvent): void {
-  let entity = new Voted(
+export function handlevotes(event: votesEvent): void {
+  let entity = new votes(
     event.transaction.hash.concatI32(event.logIndex.toI32())
   )
   entity.voter = event.params.voter

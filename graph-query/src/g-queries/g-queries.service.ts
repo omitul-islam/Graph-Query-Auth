@@ -3,12 +3,12 @@ import { gql, request } from 'graphql-request';
 
 @Injectable()
 export class GQueriesService {
-  private endpoint = 'https://api.studio.thegraph.com/query/112514/voting/version/latest';
+  private endpoint = 'https://api.studio.thegraph.com/query/112514/voting-details/version/latest';
 
   async getVotes() {
     const query = gql`
       {
-        votes(first: 5) {
+        voteDetails(first: 5) {
           id
           voter
           candidateId

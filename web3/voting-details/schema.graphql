@@ -1,4 +1,4 @@
-type Voted @entity(immutable: true) {
+type votes @entity(immutable: true) {
   id: Bytes!
   voter: Bytes! # address
   candidateId: BigInt! # uint256

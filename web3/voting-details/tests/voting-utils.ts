@@ -1,21 +1,21 @@
 import { newMockEvent } from "matchstick-as"
 import { ethereum, Address, BigInt } from "@graphprotocol/graph-ts"
-import { Voted } from "../generated/Voting/Voting"
+import { votes } from "../generated/Voting/Voting"
 
-export function createVotedEvent(voter: Address, candidateId: BigInt): Voted {
-  let votedEvent = changetype<Voted>(newMockEvent())
+export function createvotesEvent(voter: Address, candidateId: BigInt): votes {
+  let votesEvent = changetype<votes>(newMockEvent())
 
-  votedEvent.parameters = new Array()
+  votesEvent.parameters = new Array()
 
-  votedEvent.parameters.push(
+  votesEvent.parameters.push(
     new ethereum.EventParam("voter", ethereum.Value.fromAddress(voter))
   )
-  votedEvent.parameters.push(
+  votesEvent.parameters.push(
     new ethereum.EventParam(
       "candidateId",
       ethereum.Value.fromUnsignedBigInt(candidateId)
     )
   )
 
-  return votedEvent
+  return votesEvent
 }
