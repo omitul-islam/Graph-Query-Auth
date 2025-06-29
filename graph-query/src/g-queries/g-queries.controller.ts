@@ -1,4 +1,11 @@
-import { Controller } from '@nestjs/common';
+import { Controller, Get } from '@nestjs/common';
+import { GQueriesService } from './g-queries.service';
+@Controller('votes')
+export class GQueriesController {
+  constructor(private readonly gQueriesService: GQueriesService) {}
 
-@Controller('g-queries')
-export class GQueriesController {}
+  @Get()
+  async fetchVotes() {
+    return this.gQueriesService.getVotes();
+  }
+}
