@@ -1,7 +1,7 @@
 import { Controller, Get, Param } from '@nestjs/common';
 import { GQueriesService } from './g-queries.service.js';
 
-@Controller('/votes')
+@Controller('votes')
 export class GQueriesController {
 constructor(private readonly gQueriesService: GQueriesService) {}
 
@@ -11,7 +11,7 @@ async fetchVotes() {
   return this.gQueriesService.getVotes();
 }
 
-@Get('id/:id')
+@Get(':id')
 async fetchVoteById(@Param('id') id: string) {
   console.log('fetchVoteById called with id:', id);
   return this.gQueriesService.getVoteById(id);
