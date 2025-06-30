@@ -25,7 +25,7 @@ contract Voting{
     }
     function vote(uint _candidateId) public {
         require(!isVoted[msg.sender], "You have already voted");
-        require(candidates[_candidateId].voteCount > 0 &&  _candidateId <= candidateNo, "Candidate does not exist");
+        require(_candidateId > 0 && _candidateId <= candidateNo, "Candidate does not exist");
         isVoted[msg.sender] = true;
         candidates[_candidateId].voteCount++; 
         emit votes(msg.sender, _candidateId);

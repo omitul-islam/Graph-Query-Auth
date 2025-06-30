@@ -2,8 +2,8 @@
   "_format": "hh-sol-cache-2",
   "files": {
     "C:\\Users\\BS00735\\Music\\Task\\graph-query\\web3\\contracts\\voting.sol": {
-      "lastModificationDate": 1751211687464,
-      "contentHash": "d61a8f751f1e4d225c8ebcdd4e736a9f",
+      "lastModificationDate": 1751220841852,
+      "contentHash": "7926c2bd8b8d9b472821aacdf59e383f",
       "sourceName": "contracts/voting.sol",
       "solcConfig": {
         "version": "0.8.0",

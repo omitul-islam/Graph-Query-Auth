@@ -8,14 +8,34 @@ export class GQueriesService {
   async getVotes() {
     const query = gql`
       {
-        voteDetails(first: 5) {
+        votes(first: 5, orderBy: blockNumber, orderDirection: asc) {
           id
           voter
           candidateId
           blockNumber
+          blockTimestamp
+          transactionHash
         }
       }
     `;
     return await request(this.endpoint, query);
+  }
+
+  async getVoteById(id: string) {
+    const query = gql`
+      query ($id: Bytes!) {
+        vote(id: $id) {
+          id
+          voter
+          candidateId
+          blockNumber
+          blockTimestamp
+          transactionHash
+        }
+      }
+    `;
+
+    const variables = { id };
+    return await request(this.endpoint, query, variables);
   }
 }

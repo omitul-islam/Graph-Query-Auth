@@ -8,7 +8,7 @@ dataSources:
     name: Voting
     network: sepolia
     source:
-      address: "0x64144f6603C3aAA8DaEb4Bcd9B422140b0A217f8"
+      address: "0x36EA59e95743755522D4713B9d864dB753112094"
       abi: Voting
       startBlock: 8655582
     mapping:
@@ -16,7 +16,7 @@ dataSources:
       apiVersion: 0.0.9
       language: wasm/assemblyscript
       entities:
-        - votes
+        - vote
       abis:
         - name: Voting
           file: ./abis/Voting.json

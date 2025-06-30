@@ -1,7 +1,7 @@
-type votes @entity(immutable: true) {
+type Vote @entity(immutable: true) {
   id: Bytes!
-  voter: Bytes! # address
-  candidateId: BigInt! # uint256
+  voter: Bytes!
+  candidateId: BigInt!
   blockNumber: BigInt!
   blockTimestamp: BigInt!
   transactionHash: Bytes!
