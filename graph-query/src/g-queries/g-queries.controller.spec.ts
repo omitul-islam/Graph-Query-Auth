@@ -1,5 +1,5 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { GQueriesController } from './g-queries.controller';
+import { GQueriesController } from './g-queries.controller.js';
 
 describe('GQueriesController', () => {
   let controller: GQueriesController;

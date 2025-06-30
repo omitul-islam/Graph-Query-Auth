@@ -1,5 +1,5 @@
 import { Controller, Get, Param } from '@nestjs/common';
-import { GQueriesService } from './g-queries.service';
+import { GQueriesService } from './g-queries.service.js';
 
 @Controller('/votes')
 export class GQueriesController {

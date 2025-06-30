@@ -1,0 +1,26 @@
+# Stage 1: Build the app
+FROM node:18-alpine AS builder
+WORKDIR /app
+
+COPY package*.json ./
+
+RUN npm install
+
+COPY . .
+
+RUN npm run build
+
+# Stage 2: Production image
+FROM node:18-alpine
+WORKDIR /app
+
+# Copy only the built output from the builder stage
+COPY --from=builder /app/dist ./dist
+
+# Copy package files to install only production dependencies
+COPY package*.json ./
+
+# Install production dependencies only (no dev dependencies)
+RUN npm install --production
+
+CMD ["node", "dist/main.js"]

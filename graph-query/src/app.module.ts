@@ -1,9 +1,9 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
-import { GQueriesModule } from './g-queries/g-queries.module';
-import { GQueriesService } from './g-queries/g-queries.service';
-import { GQueriesController } from './g-queries/g-queries.controller';
+import { AppController } from './app.controller.js';
+import { AppService } from './app.service.js';
+import { GQueriesModule } from './g-queries/g-queries.module.js';
+import { GQueriesService } from './g-queries/g-queries.service.js';
+import { GQueriesController } from './g-queries/g-queries.controller.js';
 
 @Module({
   imports: [GQueriesModule],

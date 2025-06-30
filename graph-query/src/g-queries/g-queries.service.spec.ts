@@ -1,5 +1,5 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { GQueriesService } from './g-queries.service';
+import { GQueriesService } from './g-queries.service.js';
 
 describe('GQueriesService', () => {
   let service: GQueriesService;
